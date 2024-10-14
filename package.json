@@ -1,0 +1,25 @@
+{
+    "name": "vscode-minimal-extension",
+    "version": "0.0.1",
+    "license": "MIT",
+    "main": "./dist/extension.js",
+    "browser": "./dist/web/extension.js",
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "scripts": {
+        "build": "node ./esbuild.js",
+        "vscode:prepublish": "npm run build",
+        "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+    },
+    "engines": {
+        "vscode": "^1.94.0"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.94.0",
+        "esbuild": "^0.24.0"
+    },
+    "dependencies": {
+        "@vscode/test-web": "^0.0.62"
+    }
+}
